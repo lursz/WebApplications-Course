@@ -13,7 +13,7 @@ p:nth-child(1){
 }
 
 
-p:nth-child(2){
+#paragraph-2{
     width: 80%;
     height: 100px;
     float: right;
@@ -88,14 +88,25 @@ p:nth-child(2){
 /* Images */
 .image-left{
     float: left;
+    width: 600px;
     border-radius: 20px;
     margin: 2px 20px 0 5px;
-    
-
 }
+
 .image-right{
     float: right;
-    /* position: absolute; */
+    width: 600px;
     margin: 0% 2% 0% 5%;
-    border-radius: 20px;
+}
+
+/* Lists */
+#Europe{
+    background-color: blue;
+    position: relative;
+    top: 10em;   
+}
+#Asia{
+    background-color: red;
+    position: relative;
+
 }
