@@ -1,6 +1,7 @@
 body {
 	font-family: Tahoma, "Lucida Grande", Arial, sans-serif;
 	font-size: 62.5%;
+	background-color: rgba(0, 118, 98, 0.055);
 }
 h1 {
 	font-size: 2.4em;
@@ -11,9 +12,9 @@ h1 {
 }
 h2 {
 	font-size: 1.8em;
-	color: #666666;
+	color: black;
 	margin-bottom: 0;
-	border-bottom: 1px solid rgb(128, 168, 255);
+	border-bottom: 1px solid rgb(0, 84, 70);
 	display: block;
 }
 h3 {
@@ -33,4 +34,13 @@ ul {
 	list-style: square;
 }
 
+#sidebox{
+	float: right;
+	width: 180px;
+	background-color: #fbef99;
+	border: 1px solid #fdd040;
+	border-top-width: 5px;
+	margin: 0 0 0.5vw 1vw;
+	padding: 0 1vw;
+}
 
