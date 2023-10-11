@@ -1,0 +1,72 @@
+body {
+	font: 62.5% Verdana, Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 20px;
+}
+ul:first-of-type{
+  display: flex;
+  gap: 0;
+}
+li{
+  display: flex;
+  align-items: center;
+  border: 1px dotted grey;
+  flex: 1;
+  padding: 5px;
+  background-color: rgb(233, 233, 233);
+}
+ul > li:nth-of-type(2){
+  background-color: white;
+  font-weight: bold;
+}
+li > a{
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+}
+li.goable:hover{
+  background-color: rgb(175, 251, 156);
+  font-weight: bold;
+}
+li.goable:hover > img{
+  content: url('images/go.png');
+}
+@media screen and (max-width: 600px) {
+  ul:first-of-type{
+    flex-direction: column;
+  }
+  ul:first-of-type > li > img{
+    content: url('images/link.png');
+  }
+  ul > li:nth-of-type(4) > img:first-of-type{
+    content: url('images/bg_here.png');
+    position: relative;
+    left: 93%;
+  }
+  ul > li:nth-of-type(2){
+    background-color: rgb(233, 233, 233);
+    font-weight: normal;
+  }
+  ul > li:nth-of-type(2):hover{
+    background-color: rgb(175, 251, 156);
+  }
+  ul > li:nth-of-type(2):hover > img{
+    background-color: rgb(175, 251, 156);
+    content: url('images/go.png');
+  }
+  ul > li:nth-of-type(4){
+    display: flex;
+    background-color: white;
+    font-weight: bold;
+  }
+  ul > li:nth-of-type(4):hover{
+    background-color: white;
+  }
+  ul > li:first-of-type:hover{
+    background-color: rgb(175, 251, 156);
+    font-weight: bold;
+  }
+  ul > li:first-of-type:hover > img{
+    content: url('images/go.png');
+  }
+}

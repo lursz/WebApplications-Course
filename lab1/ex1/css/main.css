@@ -99,6 +99,22 @@ p:nth-child(1){
     margin: 0% 2% 0% 5%;
 }
 
+#image-1{
+    position: relative;
+    width: 300px;
+
+}
+#image-2{
+    position: relative;
+    width: 300px;
+    left: 310px;
+}
+#image-3{
+    position: relative;
+    width: 300px;
+    left: -300px;
+}
+
 /* Lists */
 #Europe{
     background-color: blue;
