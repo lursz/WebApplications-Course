@@ -28,9 +28,9 @@ div.figure {
 div.figure img {
     width: 100%;
     height: auto;
-    padding: 10px;
+    padding: 3px;
     border: 2px solid black;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 10 5px 5px rgba(0, 0, 0, 0.1);
 
   }
   
@@ -43,4 +43,6 @@ div.figure img {
     max-width: 100%;
     height: auto;
     display: block;
+    box-shadow: 10 5px 5px rgba(0, 0, 0, 0.1);
+
   }

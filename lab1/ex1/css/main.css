@@ -55,35 +55,39 @@ p:nth-child(1){
 .tables{
     width: 100vw;
     overflow: auto;
+    margin: 0;
 }
-.row{
+
+.first-table > * > tr {
     width: 100vw;
     height: 50px;
     color: black;
-    
-}
-.header1{
-    background-color: rgb(69, 135, 250);
-}
-.even-row1{
-    background-color: rgba(83, 206, 255, 0.663);
-}
-.uneven-row1{
-    background-color: rgba(30, 119, 175, 0.528);
+    margin: 0;
 }
 
-.header2{
+.first-table > * > tr:nth-child(even){
+    background-color: rgba(83, 206, 255, 0.663);
+}
+.first-table > * > tr:nth-child(odd){
+    background-color: rgba(30, 119, 175, 0.528);
+}
+/* --- */
+.second-table{
+    border-collapse: collapse;
+}
+.second-table > * > tr {
+    height: 50px;
     border-spacing: 0px;
-    border-collapse: separate;
-    border: 1px solid black;
+    border-collapse: collapse;
+}
+.second-table > thead > tr > th {
     background-color: rgba(58, 19, 0, 0.571);
 }
-.uneven-row2{
-    border-spacing: 0px;
-    border-collapse: separate;
-    border: 1px solid black;
+.second-table > * > tr > * {
     background-color: rgba(99, 50, 0, 0.139);
+    border: 2px solid black;
 }
+
 
 /* Images */
 .image-left{
