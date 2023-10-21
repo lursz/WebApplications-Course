@@ -1,0 +1,52 @@
+html{
+    background-color: white;
+}
+
+body{
+    font: 1.2em Helvetica, Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+
+
+.box{
+    height: 30rem;
+    width: 50rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.box > div{
+    border: 3px solid black;
+    margin: 0.4rem;
+} 
+
+
+.box > div:nth-child(odd){
+    width: 28%;
+    background-color: rgb(212, 59, 59);
+}
+
+.box > div:nth-child(even){
+    width: 67%;
+    background-color: rgb(58, 165, 242);
+}
+
+.box > div:nth-child(5){
+    background-color: yellow;
+    width: 97%;
+
+}
+
+
+
+    /* justify-content
+    align-items
+    flex-direction
+    order
+    align-self
+    flex-wrap
+    flex-flow
+    align-content */
