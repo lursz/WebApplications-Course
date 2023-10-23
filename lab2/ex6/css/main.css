@@ -10,38 +10,36 @@ body {
 
 .gallery {
     height: 30rem;
-    width: 70rem;
+    width: 80rem;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
 
+
 .gallery > div {
     flex: 0 0 47%;
-    display: flex;
-    flex-direction: column;
     margin: 1rem;
+    position: relative;
+    background-image: url("/lab2/ex6/img/mountains.webp");
+    background-size: 100%;
 }
+/* 1st photo */
 
 
-.gallery > div > img {
+/* 2nd photo */
+.gallery>div:nth-child(2):before {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 0%;
     width: 100%;
-    border-radius: 4px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease, filter 0.3s ease;
+    bottom: 0;
+    transition: height 0.3s ease;
+    background: rgba(18, 232, 132, 0.706);
 }
 
-.gallery > div > img:hover {
-    transform: scale(1.01);
-    background: rgba(0,0,0,0.3);
+.gallery>div:nth-child(2):hover:before {
+    height: 100%;
 }
 
-
-    /* justify-content
-    align-items
-    flex-direction
-    order
-    align-self
-    flex-wrap
-    flex-flow
-    align-content */
