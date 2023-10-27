@@ -1,0 +1,132 @@
+*{
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    
+}
+html, body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background-color: grey;
+}
+.menu{
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.menu > ul{
+    list-style-type: none;
+}
+.outer-menu{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(240, 41, 153);
+    width: 300px;
+    border-radius: 0.7rem;
+}
+.outer-menu-item{
+    position: inherit;
+    width: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+.outer-menu-item a{
+    display: block;
+    padding: 0.8rem;
+    color: white;
+}
+li.inner-menu-item{
+    padding: 0.8rem;
+    padding-left: 1.3rem;
+    display: block;
+    color: white;
+}
+.inner-menu{ 
+    position: relative;
+    background: #273057;
+    overflow: hidden;
+    transition: max-height 0.7s;
+    max-height: 0;
+}
+.outer-menu-item:target a{
+    background-color: violet;
+}
+.outer-menu-item:target .inner-menu{
+    max-height: 12rem;
+}
+.inner-menu li{
+    position: relative;
+}
+.inner-menu li:before{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+.inner-menu li:hover:before{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 6px;
+    left: 0;
+    top:0;
+    opacity: 1;
+    border: 24px solid transparent;
+    border-left: 11px solid grey;
+}
+.inner-menu li:after{
+    content: '';
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+.inner-menu li:hover:after{
+    content: '';
+    position: absolute;
+    height: 0;
+    width: 6px;
+    right: 0;
+    top:0;
+    opacity: 1;
+    border: 24px solid transparent;
+    border-right: 11px solid grey;
+}
+.inner-menu li:hover{
+    background: linear-gradient(to bottom, #273057 0%,#273057 50%,#394c7f 51%,#394c7f 100%);
+    transition: all 0.3s;
+    border-bottom: 1px solid #394c7f;
+}
+li > a{
+    position: relative;
+    background-color: rgb(240, 41, 153);
+}
+li > a:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right:8px solid transparent;
+    border-top:10px solid violet;
+    right: 15px;
+    bottom: -10px;
+    z-index: 8;
+    
+}
+li:last-child a:before{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 0;
+    right: 15px;
+    bottom: -10px;
+    z-index: 8;
+    
+}

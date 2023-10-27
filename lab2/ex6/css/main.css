@@ -26,6 +26,27 @@ body {
 }
 /* 1st photo */
 
+.picture-wrapper .image {
+  width: 200px;
+  height: 200px;
+  background-color: #35b;
+}
+
+.picture-wrapper .subtitle {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #555;
+  visibility: hidden;
+  display: block;
+  width: 180px;
+  padding: 10px;
+}
+
+.picture-wrapper:hover .subtitle {
+  visibility: visible;
+}
 
 /* 2nd photo */
 .gallery>div:nth-child(2):before {
