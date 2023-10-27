@@ -1,26 +1,39 @@
-body{
-    margin:0;
+html {
+    background-color: white;
+}
+
+body {
+    margin: 0;
     padding: 0;
 }
-.flex-container{
+
+.content {
+    border: 1rem solid grey;
+    width: 100%;
+}
+
+
+.flex-container {
     display: flex;
     flex-direction: row;
     width: 100%;
 }
-.menu{
+
+.menu {
     background-color: white;
     min-width: 300px;
     margin-right: 20px;
 }
-.content{
-    border: 2px solid red;
-    width: 100%;
-}
-.icon{
+
+
+.icon {
     height: 20px;
     width: 20px;
+    outline: 1px solid rgba(100, 100, 255, 0.908);
+    border-radius: 20%;
 }
-.list-el{
+
+.flex-container ul {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -29,26 +42,29 @@ body{
     height: 70px;
     padding: auto;
 }
-.list-el:hover{
+
+.flex-container ul:hover {
     transition: ease-in-out;
     background-color: aquamarine;
     border-radius: 0 15px 15px 0;
 }
-ul > h4{
+
+ul>h5 {
     margin-left: 1em;
     opacity: 1;
     visibility: visible;
     transition: visibility 0s, opacity 0.5s linear;
 }
-@media (max-width: 900px){
-    ul > h4 {
+
+@media (max-width: 900px) {
+    ul>h5 {
         transition: visibility 0s, opacity 0.5s linear;
         visibility: hidden;
         opacity: 0;
         left: -50px;
     }
 
-    .menu{
-        min-width: 120px;
+    .menu {
+        min-width: 0.1rem;
     }
 }
