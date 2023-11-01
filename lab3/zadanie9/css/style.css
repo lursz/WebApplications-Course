@@ -22,8 +22,7 @@ body {
     height: 400px;
     position: relative;
     transition: left 1s;
-    
-    animation: slide 15s infinite;
+
   }
   .slider-image {
     float: left;
@@ -62,9 +61,6 @@ body {
     left: -2400px;
   }
   
-  .image-container:hover {
-    animation: slide 10s infinite;
-  }
   
   @keyframes slide {
     0% {
