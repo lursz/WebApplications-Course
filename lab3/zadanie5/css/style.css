@@ -5,12 +5,20 @@ html{
     height: 100%;
 }
 body{
+    font: 1.2em Helvetica, Arial, sans-serif;
     width: 100vw;
     height: 100%;
     margin: 0;
     padding: 0;
     background-color: rgba(91, 174, 201, 0.6);
 }
+/* Logo - BrandName */
+.logo > h3{
+    color: white;
+    font-weight: 350;
+}
+
+
 body > div.flex-container{
     width: 100vw;
     background-color: rgb(61, 172, 209);
@@ -29,10 +37,6 @@ body > div.flex-container{
 }
 .flex-container:nth-child(2){
     margin: 0;
-}
-.logo > h3{
-    color: white;
-    font-weight: 350;
 }
 ul.flex-container > .menu-item:hover{
     background-color: rgba(0, 0, 0, 0.315);
@@ -108,6 +112,7 @@ ul.flex-container > li.menu-item:nth-of-type(2)::after, ul.flex-container > li.m
     top: -1rem;
     
 }
+
 @media (max-width: 1000px){
     .flex-container{
         flex-direction: column;
@@ -139,3 +144,83 @@ ul.flex-container > li.menu-item:nth-of-type(2)::after, ul.flex-container > li.m
     }
 
 }
+
+
+/* ------------------------------------ */
+.menu {
+    display: block;
+    z-index: 999999;
+  }
+  .menu li {
+    display: inline-block;
+    position: relative;
+  }
+  .menu li.dropdown:hover > .submenu {
+    display: block;
+  }
+  .menu li a {
+    display: block;
+    padding: 12px 8px;
+    background: #ccc;
+  }
+  .menu li.dropdown > a::after {
+    content: "\e259";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 10px;
+  }
+  .menu li a::before {
+    content: "\e179";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    margin-right: 8px;
+  }
+  .menu li a:hover {
+    background: grey;
+  }
+  
+  .menu .submenu {
+    display: none;
+  }
+  .submenu {
+    margin: 0px;
+    padding: 0px;
+    position: absolute;
+    left: 0px;
+    list-style-type: none;
+    display: block;
+    width: 200px;
+    z-index: 9;
+  }
+  .submenu li {
+    display: block;
+  }
+  .submenu li a {
+    display: block;
+    background: #999;
+    color: #fff;
+    padding: 8px 6px;
+    margin-bottom: 1px;
+  }
+  .menu .submenu > li.dropdown:hover > .submenu {
+    display: block;
+  }
+  
+  .menu .submenu .submenu {
+    position: absolute;
+    left: 200px;
+    top: 0px;
+  }
+  
+  .submenu li.dropdown > a:after {
+    content: "\e258";
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: 400;
+    margin-left: 8px;
+    font-size: 10px;
+  }
+  

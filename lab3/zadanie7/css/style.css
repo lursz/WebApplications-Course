@@ -2,7 +2,7 @@ body{
     background-color: rgb(222, 222, 222);
 }
 #video-call{
-    background-image: url('src/interlocutor.jpg');
+    background-image: url('../img/front.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
@@ -15,32 +15,52 @@ body{
     border: 1px solid transparent;
     border-radius: 5px;
 }
-.call-controls{
+
+
+/* Other speaker */
+#video-call div.user-camera{
+    position: absolute;
+    background-image: url('../img/doctor.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 25%;
+    width: 70px;
+    left: 10px;
+    top: 10px;
+    border: 0px solid transparent;
+    border-radius: 5px;;
+}
+
+
+/* Call controls */
+#video-call .call-controls{
     position: absolute;
     bottom: 20px;
     left: calc(50% - 70px);
     display: flex;
     flex-direction: row;
-}
-.call-controls > *{
     cursor: pointer;
 }
-.call-controls div{
+
+#video-call .call-controls div{
     background-color: white;
     height: 35px;
     width: 35px;
     border: 1px solid transparent;
-    border-radius: 20px;
+    border-radius: 100%;
     margin: 5px;
+    padding: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.call-controls div.end-call{
+#video-call .call-controls div.end-call{
     color: white;
     background-color: rgb(235, 38, 38);
 }
-#video-call div.toolbar{
+
+/* Signal bar */
+#video-call div.signalbar{
     position: absolute;
     left: 15px;
     bottom: 20px;;
@@ -53,19 +73,7 @@ body{
     flex-direction: column;
     box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
 }
-#video-call div.user-camera{
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    background-image: url('src/front-cam.jpg');
-    background-size: cover;
-    background-position: center;
-    height: 25%;
-    width: 70px;
-    border: 0px solid transparent;
-    border-radius: 5px;;
-}
-.tool{
+#video-call .signal-dot{
     border: 4px solid lightgreen;
     border-radius: 5px;
     margin: auto;
