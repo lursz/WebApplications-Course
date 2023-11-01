@@ -1,0 +1,39 @@
+body {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: white;
+  }
+  
+  .gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .image {
+    position: relative;
+    margin: 0 -50px;
+    z-index: 1;
+    transition: .3s;
+    height: 200px;
+  }
+  
+  .image img {
+    width: 240px;
+    height: auto;
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .image:hover {
+    transform: translateY(-20px);
+    z-index: 2;
+    border: 5px solid #fff;
+
+  }
+  
+  .image:hover img {
+    box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  }
+  
