@@ -49,7 +49,7 @@ li.inner-menu-item{
 }
 .inner-menu{ 
     position: relative;
-    background: #273057;
+    background: #3e578a;
     overflow: hidden;
     transition: max-height 0.7s;
     max-height: 0;
@@ -78,7 +78,7 @@ li.inner-menu-item{
     top:0;
     opacity: 1;
     border: 24px solid transparent;
-    border-left: 11px solid grey;
+    border-left: 11px solid yellow;
 }
 .inner-menu li:after{
     content: '';
@@ -95,12 +95,12 @@ li.inner-menu-item{
     top:0;
     opacity: 1;
     border: 24px solid transparent;
-    border-right: 11px solid grey;
+    border-right: 11px solid yellow;
 }
 .inner-menu li:hover{
-    background: linear-gradient(to bottom, #273057 0%,#273057 50%,#394c7f 51%,#394c7f 100%);
+    background: linear-gradient(to bottom, #3e578a 0%,#3e578a 50%,#394c7f 51%,#394c7f 100%);
     transition: all 0.3s;
-    border-bottom: 1px solid #394c7f;
+    border-bottom: 1px solid #3e578a;
 }
 li > a{
     position: relative;
