@@ -5,6 +5,7 @@ body {
   text-align: center;
   overflow: hidden;
 }
+
 .slide-container {
   margin: 50vh auto 0 auto;
   transform: translateY(-50%);
@@ -12,6 +13,7 @@ body {
   height: 28.125rem;
   overflow: hidden;
 }
+
 img {
   width: 20%;
 }
@@ -25,15 +27,16 @@ img {
   transition: left 1s;
 
 }
+
 .slider-image {
   float: left;
 }
 
-.button-container > input{
-display: none;
+.button-container>input {
+  display: none;
 }
 
-.button-container > label{
+.button-container>label {
   display: inline-block;
   width: 1.25rem;
   height: 1.25rem;
@@ -44,18 +47,22 @@ display: none;
 }
 
 
-.slide-container:has(#slide1:checked) > .image-container {
+.slide-container:has(#slide1:checked)>.image-container {
   left: 0rem;
 }
-.slide-container:has(#slide2:checked) > .image-container {
+
+.slide-container:has(#slide2:checked)>.image-container {
   left: -37.5rem;
 }
-.slide-container:has(#slide3:checked) > .image-container {
+
+.slide-container:has(#slide3:checked)>.image-container {
   left: -75rem;
 }
-.slide-container:has(#slide4:checked) > .image-container {
+
+.slide-container:has(#slide4:checked)>.image-container {
   left: -112.5rem;
 }
-.slide-container:has(#slide5:checked) > .image-container {
+
+.slide-container:has(#slide5:checked)>.image-container {
   left: -150rem;
 }
