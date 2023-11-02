@@ -1,83 +1,89 @@
-body{
+body {
     background-color: rgb(222, 222, 222);
 }
-#video-call{
+
+#video-call {
     background-image: url('../img/front.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
     position: relative;
     width: 100%;
-    height: 500px;
+    height: 31.25rem;
     background-color: rgb(5, 45, 82);
     margin: auto;
     text-align: center;
-    border: 1px solid transparent;
-    border-radius: 5px;
+    border: 0.0625rem solid transparent;
+    border-radius: 0.3125rem;
 }
 
 
 /* Other speaker */
-#video-call div.user-camera{
+#video-call div.user-camera {
     position: absolute;
     background-image: url('../img/doctor.jpg');
     background-size: cover;
     background-position: center;
     height: 25%;
-    width: 70px;
-    left: 10px;
-    top: 10px;
-    border: 0px solid transparent;
-    border-radius: 5px;;
+    width: 4.375rem;
+    left: 0.625rem;
+    top: 0.625rem;
+    border: 0rem solid transparent;
+    border-radius: 0.3125rem;
+    ;
 }
 
 
 /* Call controls */
-#video-call .call-controls{
+#video-call .call-controls {
     position: absolute;
-    bottom: 20px;
-    left: calc(50% - 70px);
+    bottom: 1.25rem;
+    left: calc(50% - 6.25rem);
     display: flex;
     flex-direction: row;
     cursor: pointer;
 }
 
-#video-call .call-controls div{
+#video-call .call-controls div {
     background-color: white;
-    height: 35px;
-    width: 35px;
-    border: 1px solid transparent;
+    height: 2.1875rem;
+    width: 2.1875rem;
+    border: 0.0625rem solid transparent;
     border-radius: 100%;
-    margin: 5px;
-    padding: 10px;
+    margin: 0.3125rem;
+    padding: 0.625rem;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-#video-call .call-controls div.end-call{
+
+#video-call .call-controls div.end-call {
     color: white;
     background-color: rgb(235, 38, 38);
 }
 
 /* Signal bar */
-#video-call div.signalbar{
+#video-call div.signalbar {
     position: absolute;
-    left: 15px;
-    bottom: 20px;;
-    height: 80px;
-    width: 15px;
+    left: 0.9375rem;
+    bottom: 1.25rem;
+    ;
+    height: 5rem;
+    width: 0.9375rem;
     background-color: white;
-    border: 1px solid transparent;
-    border-radius: 8px;
+    border: 0.0625rem solid transparent;
+    border-radius: 0.5rem;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 0.625rem 0.1875rem rgba(0, 0, 0, 0.2);
 }
-#video-call .signal-dot{
-    border: 4px solid lightgreen;
-    border-radius: 5px;
+
+#video-call .signal-dot {
+    border: 0.25rem solid lightgreen;
+    border-radius: 0.3125rem;
     margin: auto;
 }
-.content{
-    height: 500px;
+
+.content {
+    height: 31.25rem;
 }

@@ -12,10 +12,10 @@ body {
 }
 
 /* Text */
-header{
+header {
   width: 100%;
   text-align: center;
-  
+
 }
 
 header h1 {
@@ -29,15 +29,16 @@ header h1 {
   width: 45%;
 }
 
-.content > .text{
+.content>.text {
   color: #525252;
 }
-.content > a{
 
-    text-decoration: underline; /* Adds an underline */
-    cursor: pointer; /* Changes cursor to pointer on hover, indicating it's clickable */
-    color: rgb(0, 210, 136); /* Sets the text color to blue (you can adjust this as needed) */
-  
+.content>a {
+
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgb(0, 210, 136);
+
 }
 
 /* Pics */
@@ -50,11 +51,11 @@ header h1 {
 
 .image {
   position: relative;
-  margin: 0 -50px;
+  margin: 0 -3.125rem;
   z-index: 1;
   transition: .3s;
   height: 10rem;
-  box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0.375rem 0.375rem 0.375rem rgba(0, 0, 0, 0.2);
 }
 
 .image img {
@@ -65,12 +66,12 @@ header h1 {
 .image:hover {
   z-index: 2;
   padding: 1rem;
-  border: 7px solid #00cd00;
+  border: 0.4375rem solid #00cd00;
   border-radius: 10%;
 }
 
 .image:hover img {
-  box-shadow: 0px 8px 30px rgba(0, 0, 0, 0.3);
+  box-shadow: 0rem 0.5rem 1.875rem rgba(0, 0, 0, 0.3);
 }
 
 .gallery .image:nth-child(1) {
@@ -85,14 +86,32 @@ header h1 {
   transform: translateY(3rem);
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 62.5rem) {
   .flex-container {
     flex-direction: column;
   }
-  .gallery{
-    margin-left: 20%;
+
+  .gallery {
+    margin: auto;
   }
-  .image img{
+
+  .image {
+    margin-left: -8rem;
+  }
+
+  .image img {
     min-width: 15rem;
+  }
+
+  .gallery .image:nth-child(1) {
+    transform: translateY(2rem);
+  }
+
+  .gallery .image:nth-child(2) {
+    transform: translateY(8rem);
+  }
+
+  .gallery .image:nth-child(3) {
+    transform: translateY(13rem);
   }
 }

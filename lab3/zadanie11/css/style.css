@@ -1,3 +1,8 @@
+body {
+    font: 1.2em Helvetica, Arial, sans-serif;
+ }
+  
+
 .grid-container{
     display: grid;
     grid-template-columns: 1fr;
@@ -70,7 +75,6 @@ article.entry > div.entry-content img{
     width: 50%;
     height: auto;
     border-radius: 50%;
-    /* opływanie obrazka po okręgu */
     shape-outside: circle();
     float: left;
     margin: 10%;
@@ -82,7 +86,7 @@ article.entry > div.entry-content h1{
     font-size: 1.3em;
 }
 #form-content{
-    background: url("src/form-image.webp");
+    background-image: url('../img/nat-1-large.jpg');
     background-position:center;
     position: relative;
     background-color: lightgreen;
@@ -95,6 +99,7 @@ article.entry > div.entry-content h1{
     width: 100%;
     height: 100%;
     clip-path: polygon(0 0, 85% 0, 70% 100%, 0 100%);
+
 }
 form{
     margin: 0;
@@ -137,7 +142,6 @@ aside.my-info > div.Photo > img{
     border-radius: 50%;
   }
 aside.my-info div.social{
-    height: 40px;
     margin: 1px;
 }
 
@@ -145,8 +149,6 @@ aside.my-info div.social>a{
     height: 1rem;
     width: 1rem;
 }
-
-
 
 .fa-facebook {
     background: #3B5998;
@@ -173,9 +175,15 @@ aside.my-info div.social>a{
     color: white;
   }
   
+.ads{
+    width: 100%;
+}
+.ads img{
+    width: 30%;
+}
 
 form h1{
-    color: lightgreen;
+    color: rgb(29, 98, 29);
 }
 @media (max-width: 360px){
     aside.my-info div.Photo{
@@ -184,8 +192,13 @@ form h1{
     aside.my-info div.contact-info{
         min-width: 200px;
     }  
+
+    .social{
+        display: none !important;
+    }
 }
 @media (min-width: 768px){
+
     .grid-container{
         grid-template-columns: 1fr 1fr 1fr 1fr;
         grid-template-areas: 
