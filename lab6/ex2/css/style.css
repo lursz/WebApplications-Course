@@ -7,24 +7,24 @@
     padding: 0;
 }
 
+:root {
+    --my_green: #2aad48;
+    --my_shadow: #4c4c4c56;
+}
+
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: white;
 }
 
-ul {
-    list-style-type: none;
-    margin: 2.5rem 0;
-}
-
+/* List */
 ul li {
     display: flex;
     justify-content: space-between;
-    padding: 1.5625rem;
+    padding: 1.5rem;
     margin: 1.25rem 0;
-    background: white;
-    border-radius: 0.125rem;
-    box-shadow: 0rem 0rem 0.3125rem 0.125rem rgba(50, 52, 55, 0.284);
+    box-shadow: 0rem 0rem 0.3rem 0.12rem var(--my_shadow)
 }
 
 .container {
@@ -37,10 +37,9 @@ ul li {
 }
 
 .remove-button {
-    background: #22973d;
+    background: var(--my_green);
     color: white;
     padding: 0.625rem;
-    border-radius: 0.3125rem;
     border: 0;
     font-size: 1.125rem;
 }
@@ -49,11 +48,12 @@ ul li {
     cursor: pointer;
 }
 
+
+/* Add form */
 form#add-entry {
     border: 0;
-    background-color: white;
     padding: 1em;
-    box-shadow: 0rem 0rem 0.3125rem 0.125rem rgba(50, 52, 55, 0.284);
+    box-shadow: 0rem 0rem 0.3125rem 0.125rem var(--my_shadow);
     display: flex;
     justify-content: space-between;
 }
@@ -61,14 +61,14 @@ form#add-entry {
 input {
     width: 100%;
     font-size: 1rem;
-    padding: 0.9375rem;
-    border: 0.0625rem solid rgba(128, 128, 128, 0.608);
+    padding: 1rem;
+    border: 0.065rem solid var(--my_shadow);
     border-radius: 0.3125rem;
     margin: 0.625rem;
 }
 
 input[type=submit] {
-    background: #22973d;
+    background: var(--my_green);
     color: white;
 }
 
@@ -85,7 +85,7 @@ input[type=submit]:hover {
 
 @media (max-width: 43.75rem) {
     .container {
-        width: 85%;
+        width: 80%;
     }
 
     form#add-entry {
