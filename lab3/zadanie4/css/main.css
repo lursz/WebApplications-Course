@@ -21,8 +21,8 @@ body>div:nth-child(1) {
     z-index: 0;
 }
 
+/* Content */
 div.content {
-    position: relative;
     width: 100%;
     flex-direction: row;
     justify-content: space-around;
@@ -35,7 +35,7 @@ div.content>section {
     position: absolute;
     left: 10vw;
     width: 45vw;
-    animation-name: left-section;
+    animation-name: left-sectionX;
     animation-duration: 2s;
 }
 
@@ -53,7 +53,7 @@ div.content>form {
     background-color: white;
     box-shadow: 0px 0px 10px grey;
     padding: 2rem;
-    animation-name: right-form;
+    animation-name: right-formX;
     animation-duration: 2s;
 }
 
@@ -81,7 +81,31 @@ section button {
     box-shadow: 0px 0px 15px 0px rgba(66, 68, 90, 1);
 }
 
-@keyframes left-section {
+@keyframes left-sectionX {
+    from {
+        transform: translateX(-60vw);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes right-formX {
+    from {
+        transform: translateX(50vw);
+        opacity: 0;
+    }
+
+    to {
+        transofrm: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes left-sectionY {
     from {
         transform: translateY(-60vw);
         opacity: 0;
@@ -93,7 +117,7 @@ section button {
     }
 }
 
-@keyframes right-form {
+@keyframes right-formY {
     from {
         transform: translateY(50vw);
         opacity: 0;
@@ -104,6 +128,8 @@ section button {
         opacity: 1;
     }
 }
+
+
 
 @media (max-width: 1150px) {
     div.content {
@@ -116,6 +142,7 @@ section button {
 
     div.content section,
     div.content form {
+        animation-name: right-formY;
         position: relative;
         right: auto;
         left: auto;
@@ -124,6 +151,9 @@ section button {
         width: 80vw;
     }
 
+    div.content section{
+        animation-name: left-sectionY;
+    }
     div.content section {
         margin: 3rem 0 5rem 0;
     }

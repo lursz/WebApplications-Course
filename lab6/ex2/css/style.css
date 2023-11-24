@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: white;
+}
+
+ul {
+    list-style-type: none;
+    margin: 2.5rem 0;
+}
+
+ul li {
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5625rem;
+    margin: 1.25rem 0;
+    background: white;
+    border-radius: 0.125rem;
+    box-shadow: 0rem 0rem 0.3125rem 0.125rem rgba(50, 52, 55, 0.284);
+}
+
+.container {
+    width: 50rem;
+    margin: 2em auto;
+}
+
+.name {
+    font-weight: bold;
+}
+
+.remove-button {
+    background: #22973d;
+    color: white;
+    padding: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 0;
+    font-size: 1.125rem;
+}
+
+.remove-button:hover {
+    cursor: pointer;
+}
+
+form#add-entry {
+    border: 0;
+    background-color: white;
+    padding: 1em;
+    box-shadow: 0rem 0rem 0.3125rem 0.125rem rgba(50, 52, 55, 0.284);
+    display: flex;
+    justify-content: space-between;
+}
+
+input {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.9375rem;
+    border: 0.0625rem solid rgba(128, 128, 128, 0.608);
+    border-radius: 0.3125rem;
+    margin: 0.625rem;
+}
+
+input[type=submit] {
+    background: #22973d;
+    color: white;
+}
+
+input[type=submit]:hover {
+    cursor: pointer;
+}
+
+
+@media (max-width: 60rem) {
+    .container {
+        width: 37.5rem;
+    }
+}
+
+@media (max-width: 43.75rem) {
+    .container {
+        width: 85%;
+    }
+
+    form#add-entry {
+        flex-direction: column;
+    }
+
+    input {
+        width: auto;
+    }
+}

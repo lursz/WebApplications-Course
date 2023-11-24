@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phone book</title>
+    <script src="https://kit.fontawesome.com/88c20eabb5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Książka telefoniczna</h1>
+
+        <ul id="entry-list">
+            <li>
+                <div class="entry-content">
+                    <span class="name">Grzegorz Rogus</span><br>
+                    <span class="tel">500 600 700</span>
+                </div>
+                <button class="remove-button">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </li>
+            <li>
+                <div class="entry-content">
+                    <span class="name">Jacek Dajda</span><br>
+                    <span class="tel">500 600 700</span>
+                </div>
+                <button class="remove-button">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </li>
+            <li>
+                <div class="entry-content">
+                    <span class="name">Adam Mickiewicz</span><br>
+                    <span class="tel">451 451 451</span>
+                </div>
+                <button class="remove-button">
+                    <i class="fa-regular fa-trash-can"></i>
+                </button>
+            </li>
+        </ul>
+
+        <form id="add-entry">
+            <input type="text" id="name" placeholder="Imię i nazwisko" title="Name" required>
+            <input type="tel" id="tel" placeholder="Telefon" title="Phone number" required>
+            <input type="submit" id="add-button" value="Dodaj">
+        </form>
+
+    </div>
+</body>
+
+</html>

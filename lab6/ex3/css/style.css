@@ -1,0 +1,11 @@
+html{
+    background-color: rgb(222, 228, 235);
+}
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 2em;
+}
+p{
+    text-align: justify;
+}

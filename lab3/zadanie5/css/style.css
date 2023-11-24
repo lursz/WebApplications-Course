@@ -29,7 +29,7 @@ body {
     font-weight: 350;
 }
 
-
+/* Navbar */
 body>div.flex-container {
     width: 100vw;
     background-color: rgb(61, 172, 209);
@@ -42,6 +42,7 @@ body>div.flex-container {
 
 }
 
+/* Menu */
 .flex-container>li {
     list-style-type: none;
     padding: 1rem;
@@ -56,6 +57,7 @@ ul.flex-container>.menu-item:hover {
     background-color: rgba(0, 0, 0, 0.315);
 }
 
+/* Login buttons */
 .buttons * {
     margin: 1rem;
 }
@@ -75,6 +77,8 @@ ul.flex-container>.menu-item:hover {
     background-color: white;
 }
 
+
+/* Down arrow */
 ul.flex-container>li.menu-item:nth-of-type(2)::after,
 ul.flex-container>li.menu-item:nth-of-type(3)::after {
     content: '';
@@ -85,6 +89,7 @@ ul.flex-container>li.menu-item:nth-of-type(3)::after {
     top: 0.9375rem;
 }
 
+/* Dropdown */
 .dropdown {
     position: relative;
     box-sizing: border-box;
