@@ -1,0 +1,45 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: system-ui, 'Segoe UI', 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;
+}
+
+#form-content{
+    padding: 2em 0;
+    display: flex;
+    justify-content: center;
+}
+#password-requirements{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+}
+label{
+    font-size: 1.2em;
+}
+input{
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    padding: 1em;
+    margin: 1em 0;
+    width: 20em;
+}
+i{
+    opacity: 0.6;
+}
+
+i.fa-circle-check{
+    color:green;
+}
+i.fa-eye-slash, i.fa-eye{
+    position: relative;
+    left: -2em;
+    cursor: pointer;
+}

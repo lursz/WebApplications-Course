@@ -1,0 +1,27 @@
+*,
+*::before,
+*::after {
+    -webkit-box-sizing: inherit;
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+#first-box{
+    background-color: lightblue;
+    width: 25rem;
+    height: 25rem;
+    text-align: center;
+}
+#second-box{
+    background-color: red;
+    margin: 2rem auto;
+    height: 19rem;
+    width: 19rem;
+}
+#third-box{
+    background-color: yellow;
+    margin: 2rem auto;
+    height: 12.5rem;
+    width: 12.5rem;
+}
