@@ -1,0 +1,157 @@
+// Plik script.js
+
+// Funkcja pomocnicza do formatowania liczb
+function formatNumber(num) {
+    return num.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1 ')
+}
+
+
+
+
+
+
+// Funkcja pomocnicza do grupowania danych według subregionu
+function groupBySubregion(data) {
+    // Utwórz obiekt, który będzie przechowywał dane pogrupowane według subregionu
+    let grouped = {};
+    // Przeiteruj po każdym elemencie danych
+    for (let item of data) {
+        // Pobierz nazwę subregionu
+        let subregion = item.subregion;
+        // Jeśli subregion nie istnieje w obiekcie, utwórz nową tablicę dla niego
+        if (!grouped[subregion]) {
+            grouped[subregion] = [];
+        }
+        // Dodaj element do tablicy subregionu
+        grouped[subregion].push(item);
+    }
+    // Zwróć obiekt z pogrupowanymi danymi
+    return grouped;
+}
+
+// Funkcja pomocnicza do tworzenia wierszy tabeli z danymi subregionu
+function createSubregionRows(subregion, data) {
+    // Utwórz tablicę, która będzie przechowywać wiersze tabeli
+    let rows = [];
+    // Oblicz sumaryczną ludność i powierzchnię subregionu
+    let totalPopulation = data.reduce((sum, item) => sum + item.population, 0);
+    let totalArea = data.reduce((sum, item) => sum + item.area, 0);
+    // Utwórz wiersz z nazwą subregionu, sumaryczną ludnością i powierzchnią
+    let subregionRow = `<tr class="subregion" data-subregion="${subregion}">
+        <td>${subregion}</td>
+        <td></td>
+        <td>${formatNumber(totalPopulation)}</td>
+        <td>${formatNumber(totalArea)}</td>
+    </tr>`;
+    // Dodaj wiersz do tablicy
+    rows.push(subregionRow);
+    // Przeiteruj po każdym elemencie danych subregionu
+    for (let item of data) {
+        // Utwórz wiersz z nazwą kraju, stolicą, ludnością i powierzchnią
+        let countryRow = `<tr class="country" data-subregion="${subregion}">
+            <td>${item.name.common}</td>
+            <td>${item.capital}</td>
+            <td>${formatNumber(item.population)}</td>
+            <td>${formatNumber(item.area)}</td>
+        </tr>`;
+        // Dodaj wiersz do tablicy
+        rows.push(countryRow);
+    }
+    // Zwróć tablicę z wierszami tabeli
+    return rows;
+}
+
+// Gdy dokument jest gotowy
+$(document).ready(function() {
+    // Pobierz dane z json z podanego adresu
+    $.getJSON("https://restcountries.com/v3.1/all", function(data) {
+        // Grupuj dane według subregionu
+        let grouped = groupBySubregion(data);
+        // Utwórz tablicę, która będzie przechowywać wszystkie wiersze tabeli
+        let allRows = [];
+        // Przeiteruj po każdym subregionie
+        for (let subregion in grouped) {
+            // Utwórz wiersze tabeli z danymi subregionu
+            let rows = createSubregionRows(subregion, grouped[subregion]);
+            // Dodaj wiersze do tablicy
+            allRows.push(...rows);
+        }
+        // Wstaw wiersze do tabeli
+        $("#table tbody").html(allRows.join(""));
+        // Ukryj wiersze z krajami
+        $(".country").hide();
+        // Inicjalizuj tabelę z biblioteki DataTables
+        let table = $("#table").DataTable({
+            // Ustaw liczbę pozycji na jednym ekranie
+            pageLength: 10,
+            // Ustaw opcje sortowania i filtrowania
+            order: [[0, "asc"]],
+            columnDefs: [
+                { orderable: true, searchable: true, targets: 0 },
+                { orderable: true, searchable: true, targets: 1 },
+                { orderable: true, searchable: false, targets: 2 },
+                { orderable: true, searchable: false, targets: 3 }
+            ]
+        });
+        // Gdy użytkownik kliknie na wiersz z subregionem
+        $("#table tbody").on("click", ".subregion", function() {
+            // Pobierz nazwę subregionu
+            let subregion = $(this).data("subregion");
+            // Znajdź wszystkie wiersze z krajami tego subregionu
+            let countries = $(".country[data-subregion='" + subregion + "']");
+            // Przełącz widoczność wierszy z krajami
+            countries.toggle();
+            // Zaktualizuj tabelę
+            table.rows().invalidate().draw();
+        });
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function DisplayInTable() {
+    const table = document.querySelectorAll('#table > div');
+    console.log(table);
+    let html = '';
+    for (let region of table) {
+        html += `<div class="region">
+        <div class="region-name">${region.id}</div>
+        <div class="region-cities">`;
+        for (let city of data_) {
+            if (city.region == region.id) {
+                html += `<div class="city">
+                <div class="city-name">${city.name.common}</div>
+                <div class="city-population">${formatNumber(city.population)}</div>
+                </div>`;
+            }
+        }
+        html += `</div></div>`;
+
+        
+        
+    }
+
+
+    console.log(table);
+}
