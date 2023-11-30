@@ -77,7 +77,7 @@ function resetCounter() {
 function toggleCapturingPhase() {
     capturingPhase = !capturingPhase;
 
-    swapButton.innerText = capturingPhase ? "Capturing Phase" : "Bubble Phase";
+    swapButton.innerText = capturingPhase ? "Change order" : "Change order";
     firstObject.removeEventListener("click", init, !capturingPhase);
     firstObject.addEventListener("click", init, capturingPhase);
     if (redActive) {
