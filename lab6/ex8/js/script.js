@@ -40,10 +40,10 @@ function createCountryList() {
       continue
     }
     let country = {
-      name: obj.name.common,
-      subregion: obj.subregion,
+      name: obj.name.common ?? "N/A",
+      subregion: obj.subregion ?? "N/A",
       capital: obj.capital?.join(', ') ?? "N/A",
-      population: obj.population,
+      population: obj.population ?? 0,
       area: obj.area ?? 0
     };
     filteredCountries_.push(country);
@@ -76,8 +76,16 @@ function createSubregionsList() {
     }
   }
   // Deep copy of filteredSubregions_ to ogFilteredSubregions_
-  ogFilteredSubregions_ = JSON.parse(JSON.stringify(filteredSubregions_));
-
+  filteredSubregions_.forEach((key, value) => {
+    console.log(key);
+    console.log(value);
+    if (key === null || key === undefined) {
+      return;
+    }
+    const temp = JSON.parse(JSON.stringify(value));
+    ogFilteredSubregions_.set(key, temp);
+  }
+  );
 
 
   HTMLPrint(1,10);
@@ -129,49 +137,55 @@ function interface() {
   const searchName = document.getElementById('search-name');
   searchName.addEventListener('keyup', () => {
     if (number_of_characters > searchName.value.length) {
-      filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
+      ogFilteredSubregions_.forEach((key, value) => {
+        filteredSubregions_.set(key, value);
+      });
+      console.log(filteredSubregions_);
     }
+    console.log(searchName.value)
     findByName(searchName.value);
     number_of_characters = searchName.value.length;
     HTMLPrint();
   });
 
-  const searchCapital = document.getElementById('search-capital');
-  searchCapital.addEventListener('keyup', () => {
-    if (number_of_characters > searchCapital.value.length) {
-      filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
-    }
+  // const searchCapital = document.getElementById('search-capital');
+  // searchCapital.addEventListener('keyup', () => {
+  //   if (number_of_characters > searchCapital.value.length) {
+  //     filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
+  //   }
 
-    findByCapital(searchCapital.value);
-    number_of_characters = searchCapital.value.length;
-    HTMLPrint();
-  });
-  const searchPopulation = document.getElementById('search-population');
-  searchPopulation.addEventListener('keyup', () => {
-    if (number_of_characters > searchPopulation.value.length) {
-      filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
-    }
-    findByPopulation(searchPopulation.value);
-    number_of_characters = searchPopulation.value.length;
-    HTMLPrint();
-  });
-  const searchArea = document.getElementById('search-area');
-  searchArea.addEventListener('keyup', () => {
-    if (number_of_characters > searchArea.value.length) {
-      filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
-    }
-    findByArea(searchArea.value);
-    number_of_characters = searchArea.value.length;
-    HTMLPrint();
-  }
-  );
+  //   findByCapital(searchCapital.value);
+  //   number_of_characters = searchCapital.value.length;
+  //   HTMLPrint();
+  // });
+  // const searchPopulation = document.getElementById('search-population');
+  // searchPopulation.addEventListener('keyup', () => {
+  //   if (number_of_characters > searchPopulation.value.length) {
+  //     filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
+  //   }
+  //   findByPopulation(searchPopulation.value);
+  //   number_of_characters = searchPopulation.value.length;
+  //   HTMLPrint();
+  // });
+  // const searchArea = document.getElementById('search-area');
+  // searchArea.addEventListener('keyup', () => {
+  //   if (number_of_characters > searchArea.value.length) {
+  //     filteredSubregions_ = JSON.parse(JSON.stringify(ogFilteredSubregions_));
+  //   }
+  //   findByArea(searchArea.value);
+  //   number_of_characters = searchArea.value.length;
+  //   HTMLPrint();
+  // }
+  // );
 
 }
 
 
 
 function findByName(name) {
-  filteredSubregions_ = Array.from(filteredSubregions_.values())
+  console.log("TEST")
+  console.log(filteredSubregions_)
+  let tempArray = Array.from(filteredSubregions_.values())
     .map((subregion) => {
       subregion.countries = subregion?.countries?.filter((country) => {
         return country.name.toLowerCase().includes(name.toLowerCase());
@@ -179,6 +193,13 @@ function findByName(name) {
       return subregion;
     }
     ).filter((subregion) => subregion.countries.length > 0);
+
+    console.log(tempArray)
+
+    filteredSubregions_ = new Map(tempArray.map((subregion) => [subregion.subregion, subregion]));
+
+    console.log(filteredSubregions_);
+
   HTMLPrint();
 }
 function findByCapital(capital) {
@@ -224,6 +245,9 @@ function HTMLPrint(start_,finish_) {
   let divSubregions = document.getElementById('subregions');
   divSubregions.innerHTML = '';
   let tempArray = Array.from(filteredSubregions_.values());
+
+  console.log(filteredSubregions_);
+  console.log(tempArray);
 
   start_ = start_ ?? 0;
   finish_ = finish_ ?? tempArray.length;
