@@ -1,0 +1,6 @@
+<div [style.backgroundColor]="selectedColor">
+  <h1>Wybierz kolor</h1>
+  <app-child [colors]="colors" (colorChange)="onColorChange($event)"></app-child>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,21 @@
+<h1>Country List</h1>
+<h2>Moje ulubione kraje</h2>
+
+<form (submit)="addCountry()">
+  <input type="text" [(ngModel)]="newCountry" name="newCountry" placeholder="Wpisz nazwę kraju"> <!-- pole tekstowe z nazwą kraju -->
+  <button type="submit">Dodaj</button> 
+</form>
+
+<div *ngIf="countries.length === 0">
+  <p>Nie masz żadnych ulubionych krajów.</p>
+</div>
+
+<ul> 
+  <li *ngFor="let country of countries; let i = index">
+    {{i + 1}}. {{country}}
+    <button (click)="removeCountry(country)">Usuń</button>
+  </li>
+</ul>
+
+
+<router-outlet></router-outlet>

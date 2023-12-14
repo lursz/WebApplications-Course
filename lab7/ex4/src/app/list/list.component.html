@@ -1,0 +1,11 @@
+<ul>
+    <li *ngFor="let contact of contacts">
+        {{contact.name}}
+        <button (click)="toggleDetails(contact)">Show / Hide Details</button>
+        <p *ngIf="contact.showDetails">
+            Phone: {{ contact.phone }}<br>
+            Email: {{ contact.email }}
+        </p>
+        
+    </li>
+</ul>
