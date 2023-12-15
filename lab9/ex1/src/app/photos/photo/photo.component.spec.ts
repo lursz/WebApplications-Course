@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewPhotoComponent } from './view-photo.component';
+import { PhotoComponent } from './photo.component';
 
-describe('ViewPhotoComponent', () => {
-  let component: ViewPhotoComponent;
-  let fixture: ComponentFixture<ViewPhotoComponent>;
+describe('PhotoComponent', () => {
+  let component: PhotoComponent;
+  let fixture: ComponentFixture<PhotoComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ViewPhotoComponent]
+      imports: [PhotoComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(ViewPhotoComponent);
+    fixture = TestBed.createComponent(PhotoComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

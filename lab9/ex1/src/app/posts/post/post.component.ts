@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Input } from '@angular/core';
-import { PostsServiceService, PostDTO } from '../../posts.service';
+import { PostsService, PostDTO } from '../posts.service';
 
 @Component({
   selector: 'app-post',
@@ -8,7 +8,7 @@ import { PostsServiceService, PostDTO } from '../../posts.service';
   imports: [],
   templateUrl: './post.component.html',
   styleUrl: './post.component.css',
-  providers: [PostsServiceService]
+  providers: [PostsService]
 })
 export class PostComponent {
   @Input() post!: PostDTO;

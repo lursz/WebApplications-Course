@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PostsServiceService, PostDTO } from '../posts.service';
+import { PostsService, PostDTO } from './posts.service';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { PostComponent } from "./post/post.component";
 
@@ -11,12 +11,12 @@ import { PostComponent } from "./post/post.component";
   templateUrl: './posts.component.html',
   styleUrl: './posts.component.css',
   imports: [PostComponent, RouterLink, RouterLinkActive, CommonModule],
-  providers: [PostsServiceService]
+  providers: [PostsService]
 })
 export class PostsComponent {
-  service: PostsServiceService;
+  service: PostsService;
 
-  constructor(service: PostsServiceService) {
+  constructor(service: PostsService) {
     this.service = service;
   }
 

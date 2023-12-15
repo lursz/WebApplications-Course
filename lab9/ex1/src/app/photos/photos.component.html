@@ -1,1 +1,6 @@
-<p>photos works!</p>
+<h1>Photos</h1>
+<div>
+    <div *ngFor="let photo of service.images">
+        <app-photo [img]="photo"></app-photo>
+    </div>
+</div>
