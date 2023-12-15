@@ -11,10 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'ex1';
-  colors = ['czerwony', 'pomarańczowy', 'żółty', 'zielony', 'niebieski', 'indygo', 'fioletowy'];
-  selectedColor = 'biały';
+  colors: string[] = ['red', 'blue', 'green', 'yellow', 'orange', 'purple', 'pink'];
+  selectedColor: string = '';
 
-  onColorChange(color: string) {
+  setColor(color: string) {
     this.selectedColor = color;
   }
 }

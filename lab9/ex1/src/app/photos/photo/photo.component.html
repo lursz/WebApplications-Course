@@ -1,4 +1,7 @@
 <div>
     <h3>{{ img.title }}</h3>
-    <img [src]="img.url" [alt]="img.title" class="img-fluid">
+    <!-- <img [src]="img.url" [alt]="img.title" class="img-fluid"> -->
+    <a [routerLink]="['/photos', img.id]" routerLinkActive="true">
+        <img [src]="img.url" [alt]="img.title" class="img-fluid">
+    </a>
 </div>

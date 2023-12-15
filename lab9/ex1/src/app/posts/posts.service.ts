@@ -17,14 +17,6 @@ export class PostsService {
       });
   }
 
-  postPost(post: PostDTO) {
-    this.http.post('https://jsonplaceholder.typicode.com/posts', post)
-      .subscribe(response => {
-        console.log(response);
-      });
-  }
-
-
 }
 
 

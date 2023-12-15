@@ -1,6 +1,8 @@
-<div [style.backgroundColor]="selectedColor">
-  <h1>Wybierz kolor</h1>
-  <app-child [colors]="colors" (colorChange)="onColorChange($event)"></app-child>
+<div>
+  <h2>Parent Component</h2>
+  <app-child [colors]="colors" (colorSelected)="setColor($event)"></app-child>
+  <div [style.background-color]="selectedColor">
+    Selected Color: {{ selectedColor }}
+  </div>
 </div>
-
 <router-outlet></router-outlet>

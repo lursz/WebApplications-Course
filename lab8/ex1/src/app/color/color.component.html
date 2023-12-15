@@ -1,6 +1,6 @@
-<select (change)="onSelect($event.target.value)">
-    <option *ngFor="let color of colors" [value]="color">{{color}}</option>
+<div>
+  <h3>Child Component</h3>
+  <select (change)="onColorChange(color)">
+    <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
   </select>
-  <div [style.backgroundColor]="selectedColor">
-    <h2>Wybrany kolor: {{selectedColor}}</h2>
-  </div>
+</div>

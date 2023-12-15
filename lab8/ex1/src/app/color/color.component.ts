@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-color',
@@ -8,13 +9,12 @@ import { Component } from '@angular/core';
   styleUrl: './color.component.css'
 })
 export class ColorComponent {
-  @Input() colors: string[];
-  @Output() colorChange = new EventEmitter<string>();
-  selectedColor = 'biały';
+  color: string = '';
+  @Input() colors: string[] = [];
+  @Output() colorSelected = new EventEmitter<string>();
 
-  onSelect(color: string) {
-    this.selectedColor = color;
-    this.colorChange.emit(color);
+  onColorChange(color: string) {
+    this.colorSelected.emit(color);
   }
 
 }
