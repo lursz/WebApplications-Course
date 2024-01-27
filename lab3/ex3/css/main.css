@@ -1,0 +1,137 @@
+html {
+    background-color: white;
+}
+
+body {
+    font: 1.2em Helvetica, Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+}
+
+.container {
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 2rem;
+}
+
+.container>div {
+    max-width: 450px;
+    height: 800px;
+    margin: auto;
+    border-radius: 2px;
+    box-shadow: 0px 8px 5px 5px rgba(197, 197, 200, 0.495)
+}
+
+/* Image */
+img {
+    width: 100%;
+    max-width: 100%;
+    height: 35%;
+    display: block;
+    border-radius: 2px 2px 0 0;
+}
+
+/* Text */
+.container>div>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 0 1.5rem;
+    height: 65%;
+}
+
+.container>div>div>h1 {
+    margin-top: 0;
+    margin-bottom: 0.25rem;
+    padding-top: 1em;
+    font-size: 1.7em;
+}
+
+.container>div>div>h2 {
+    margin-bottom: 0.25rem;
+    margin-top: 0.25rem;
+    color: lightcoral;
+}
+
+.container>div>div>p {
+    margin-bottom: auto;
+    line-height: 2rem;
+    opacity: 0.7;
+}
+
+/* Footer */
+.footer {
+    margin: 2rem 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    background-color: lightcoral;
+    color: white;
+    border: none;
+    padding: 14px 18px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+}
+
+.social img {
+    width: 20%;
+    height: 35%;
+}
+
+.social p {
+    margin: 0;
+    padding: 0;
+    color: rgba(38, 38, 38, 0.869);
+    display: flex;
+    align-items: center;
+}
+
+/* Resize */
+@media (max-width: 1450px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 20px;
+    }
+}
+
+@media (max-width: 940px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto auto;
+    }
+}
+
+@media (max-width: 750px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto;
+    }
+}
+
+@media (min-width: 2000px) {
+    .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto auto;
+    }
+}
